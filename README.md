@@ -8,7 +8,8 @@
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 
-
+### Association
+-
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -29,7 +30,7 @@
 
 
 
-## membersテーブル
+## user_groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
