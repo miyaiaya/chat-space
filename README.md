@@ -35,7 +35,7 @@
 - belongs_to :group
 
 
-## user_groupテーブル
+## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
