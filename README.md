@@ -9,8 +9,9 @@
 |password|string|null: false, unique: true|
 
 ### Association
-- has_many :users_groups
-- has_many :groups, through: :users_groups
+- has_many :members
+- has_many :groups, through: :members
+- has_many :messages
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -19,8 +20,8 @@
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :users_groups
-- has_many :users, through: :users_groups
+- has_many :members
+- has_many :users, through: :members
 
 ## messagesテーブル
 |Column|Type|Options|
