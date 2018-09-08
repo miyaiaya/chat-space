@@ -1,3 +1,21 @@
+
+$side-width: 300px;
+
 .main-contents{
+  width: calc( 100vw - #{$side-width});
+  height: 100vh;
   float: right;
+   .chat-goup-infomation{
+    height: 96px;
+    width: 100%;
+    float: right;
+
+     .infomation-content{
+      float: left;
+     }
+     .infomation-edit{
+      float: right;
+     }
+
+   }
 }

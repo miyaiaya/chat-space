@@ -1,16 +1,19 @@
 
-%div{class: "side-bar"}
-  %div{class: "user-name"}
+
+.side-bar
+  .user-name
     %p 名前
     %i{class: "fas fa-cog fa-fw sidebar-icon"}
     %i{class: "fas fa-edit fa-fw sidebar-icon"}
-  %div{class: "group-latest-message"}
+  .group-latest-message
     %p{class: "group-name"} 〇〇〇〇
     %p{class: "group-message"} まだメッセージはありません。
 
 .main-contents
   .chat-goup-infomation
-    %p グループ名
-    %p Members
-    %p メンバー名
-    %a{href: ""}Edit
+    .infomation-content
+      %p{class: "group-name"} グループ名
+      %p{class: "members"} Members
+      %p{class: "members-name"} メンバー名
+    .infomation-edit
+      %a{href: ""}Edit
