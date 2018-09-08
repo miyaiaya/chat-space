@@ -1,4 +1,5 @@
 
+$whitecolor: #FFFFFF;
 
   .side-bar {
     background-color: #2f3e51;
@@ -9,17 +10,32 @@
       background-color: #253141;
       padding: 0 20px;
        p {
-        color: #FFFFFF;
+        color: $whitecolor;
         font-size: 16px;
         font-weight: bold;
         padding-top: 35px;
         float: left;
        }
        .sidebar-icon {
-        color: #FFFFFF;
+        color: $whitecolor;
         float: right;
         padding-top: 35px;
        }
+    }
+    .group-latest-message{
+      padding: 0 20px;
+       p {
+        color: $whitecolor;
+      }
+         .group-name{
+          font-size: 15px;
+          padding-top: 20px;
+          padding-bottom: 5px;
+         }
+         .group-message{
+          font-size:11px;
+          padding-bottom: 40px;
+         }
     }
 
   }
