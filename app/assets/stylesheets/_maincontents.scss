@@ -48,7 +48,15 @@ $side-width: 300px;
     border: solid 1px #eeeeee;
     position: absolute;
     top: 96px;
-
+     .message-content{
+      padding-top: 46px;
+       &__user{
+        font-size: 18px;
+        color: #434A54;
+        font-weight: bold;
+       }
+      }
+     }
 
    }
-}
+
