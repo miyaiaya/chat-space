@@ -81,12 +81,17 @@ $side-width: 300px;
      overflow: hidden;
          &__form-area{
            height: 50px;
-           width:50%;
+           width: calc(100% - 130px);
            margin: 20px 0;
+           padding: 0 15px 0 10px;
            float: left;
+           position: relative;
+           display: block;
          }
-        .upload-label{
-
+          .upload-label{
+           position: absolute;
+           right: 10px;
+           }
         }
         .send-button{
           background-color: $blue;
@@ -97,7 +102,7 @@ $side-width: 300px;
           padding: 0 20px;
           font-size: 16px;
         }
-     }
+
 
    }
 
