@@ -22,9 +22,9 @@
       %span{class: "message-content__date"}2018/09/09 07:22:15
       %p{class: "message-content__text"}テキストテキストテキスト!!!!!!!!!!!!!!!!
   .post-message
-    %form.post-massage__form
+    %form.post-message__form
       %input{:placeholder => "type a message" ,:class=> "post-message__form-area"}
-      %label.upload-label{for: "upload-icon"}
-        %i{class: "far fa-image"}
-        %input{:type => "file", :id=> "upload-icon", :style => "display:none;"}
-      %button{:type => "submit"}Send
+        %label.upload-label{for: "upload-icon"}
+          %i{class: "far fa-image"}
+          %input{:type => "file", :id=> "upload-icon", :style => "display:none;"}
+      %button{:type => "submit", :class => "send-button"}Send

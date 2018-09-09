@@ -48,6 +48,7 @@ $side-width: 300px;
     border: solid 1px #eeeeee;
     position: absolute;
     top: 96px;
+    box-sizing: border-box;
      .message-content{
       padding-top: 46px;
        &__name{
@@ -72,9 +73,31 @@ $side-width: 300px;
    .post-message{
      height: 90px;
      width: 100%;
+     background-color:#AAAAAA;
+     padding: 0 40px;
      position: absolute;
-     bottom: 0px;
-   }
+     bottom: 0;
+     box-sizing: border-box;
+     overflow: hidden;
+         &__form-area{
+           height: 50px;
+           width:50%;
+           margin: 20px 0;
+           float: left;
+         }
+        .upload-label{
+
+        }
+        .send-button{
+          background-color: $blue;
+          color: white;
+          float: right;
+          height: 50px;
+          margin: 20px 0;
+          padding: 0 20px;
+          font-size: 16px;
+        }
+     }
 
    }
 
