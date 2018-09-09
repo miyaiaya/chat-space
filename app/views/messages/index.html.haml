@@ -24,4 +24,7 @@
   .post-massage
     %form.post-massage__form
       %input{:placeholder => "type a message" ,:class=> "post-message__form-area"}
+      %label.upload-label{for: "upload-icon"}
+        %i{class: "far fa-image"}
+        %input{:type => "file", :id=> "upload-icon", :style => "display:none;"}
 
