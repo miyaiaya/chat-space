@@ -1,0 +1,29 @@
+
+
+.side-bar
+  .user-name
+    %p 名前
+    %i{class: "fas fa-cog fa-fw sidebar-icon"}
+    %i{class: "fas fa-edit fa-fw sidebar-icon"}
+  .group-latest-message
+    %p{class: "group-name"} 〇〇〇〇
+    %p{class: "group-message"} まだメッセージはありません。
+
+.main-contents
+  .chat-group-infomation
+    .infomation-content
+      %p{class: "group-name"} グループ名
+      %p{class: "members"} Members
+    .infomation-edit
+      %a{href: ""}Edit
+  .show-message
+    .message-content
+      %h5{class: "message-content__name"}名前名前
+      %span{class: "message-content__date"}2018/09/09 07:22:15
+      %p{class: "message-content__text"}テキストテキストテキスト!!!!!!!!!!!!!!!!
+  .post-message
+    %input{:placeholder => "type a message" ,:class=> "post-message__form-area"}
+      %label.upload-label{for: "upload-icon"}
+        %i{class: "far fa-image"}
+        %input{:type => "file", :id=> "upload-icon", :style => "display:none;"}
+    %button{:type => "submit", :class => "send-button"}Send
