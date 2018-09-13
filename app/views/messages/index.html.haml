@@ -2,8 +2,9 @@
   .user-name
     %p
       = current_user.name
-    %i{class: "fas fa-cog fa-fw sidebar-icon"}
     = link_to edit_user_path(current_user) do
+      %i{class: "fas fa-cog fa-fw sidebar-icon"}
+    = link_to new_group_path do
       %i{class: "fas fa-edit fa-fw sidebar-icon"}
 
   .group-latest-message
