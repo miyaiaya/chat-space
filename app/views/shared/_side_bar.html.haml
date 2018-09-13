@@ -1,0 +1,16 @@
+.side-bar
+  .user-name
+    %p
+      = current_user.name
+    = link_to edit_user_path(current_user) do
+      %i{class: "fas fa-cog fa-fw sidebar-icon"}
+    = link_to new_group_path do
+      %i{class: "fas fa-edit fa-fw sidebar-icon"}
+
+  .group-latest-message
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        %p{class: "group-name"}
+          =group.name
+        %p{class: "group-message"}
+          まだメッセージはありません。
