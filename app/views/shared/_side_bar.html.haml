@@ -9,8 +9,9 @@
 
   .group-latest-message
     - current_user.groups.each do |group|
-      = link_to group_messages_path(group) do
-        %p{class: "group-name"}
-          =group.name
-        %p{class: "group-message"}
-          まだメッセージはありません。
+      .group
+        = link_to group_messages_path(group) do
+          %p{class: "group-name"}
+            = group.name
+          %p{class: "group-message"}
+            まだメッセージはありません。
