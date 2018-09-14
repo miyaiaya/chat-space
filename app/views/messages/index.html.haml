@@ -1,14 +1,4 @@
-.side-bar
-  .user-name
-    %p
-      = current_user.name
-    %i{class: "fas fa-cog fa-fw sidebar-icon"}
-    = link_to edit_user_path(current_user) do
-      %i{class: "fas fa-edit fa-fw sidebar-icon"}
-
-  .group-latest-message
-    %p{class: "group-name"} 〇〇〇〇
-    %p{class: "group-message"} まだメッセージはありません。
+= render 'shared/side_bar'
 
 .main-contents
   .chat-group-infomation
