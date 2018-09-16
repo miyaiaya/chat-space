@@ -3,15 +3,14 @@
 .main-contents
   .chat-group-infomation
     .infomation-content
-      %p{class: "group-name"} グループ名
-      %p{class: "members"} Members
+      %p{class: "group-name"}
+        =@group.name
+      %p{class: "members"}
+        =@group.members.name
     .infomation-edit
       %a{href: ""}Edit
-  .show-message
-    .message-content
-      %h5{class: "message-content__name"}名前名前
-      %span{class: "message-content__date"}2018/09/09 07:22:15
-      %p{class: "message-content__text"}テキストテキストテキスト!!!!!!!!!!!!!!!!
+  .messages
+    = render @messages
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :body, class: 'form__form-area', placeholder: "type a message"
