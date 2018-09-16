@@ -13,8 +13,10 @@
       %span{class: "message-content__date"}2018/09/09 07:22:15
       %p{class: "message-content__text"}テキストテキストテキスト!!!!!!!!!!!!!!!!
   .post-message
-    %input{:placeholder => "type a message" ,:class=> "post-message__form-area"}
-      %label.upload-label{for: "upload-icon"}
-        %i{class: "far fa-image"}
-        %input{:type => "file", :id=> "upload-icon", :style => "display:none;"}
-    %button{:type => "submit", :class => "send-button"}Send
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: 'post-message__form-area', placeholder: "type a message"
+      .form__upload-label
+        = f.label :image, class: 'form__upload-label__image' do
+          = fa_icon 'image', class: 'icon'
+          =f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'send-button'
