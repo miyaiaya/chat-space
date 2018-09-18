@@ -11,8 +11,10 @@
           = user.name
     .infomation-edit
       %a{href: ""}Edit
+
   .messages
     = render @messages
+
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :body, class: 'form__form-area', placeholder: "type a message"
