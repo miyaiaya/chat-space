@@ -6,7 +6,9 @@
       %p{class: "group-name"}
         = @group.name
       %p{class: "members"}
-        = current_user.name
+        Member:
+        - @group.users.each do |user|
+          = user.name
     .infomation-edit
       %a{href: ""}Edit
   .messages
