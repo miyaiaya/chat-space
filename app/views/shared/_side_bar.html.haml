@@ -14,5 +14,4 @@
           %p{class: "group-name"}
             = group.name
           %p{class: "group-message"}
-            = @message.body
-            まだメッセージはありません。
+            = group.show_last_message
