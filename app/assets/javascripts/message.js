@@ -17,6 +17,10 @@ $(function(){
     return html;
   }
 
+  function scroll(){
+    $(.'show-message').animate({scrollTop: $('.show-message')[0].scrollHeight}, 'fast')
+  }
+
   $('.form').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -33,6 +37,7 @@ $(function(){
       var html = buildHTML(data);
       $('.message-content__text').append(html)
       $('.form__form-area').val()
+      scroll();
     })
   });
 });
