@@ -18,7 +18,7 @@ $(function(){
   }
 
   function scroll(){
-    $(.'show-message').animate({scrollTop: $('.show-message')[0].scrollHeight}, 'fast')
+    $('.show-message').animate({scrollTop: $('.show-message')[0].scrollHeight}, 'fast')
   }
 
   $('.form').on('submit', function(e){
@@ -38,6 +38,9 @@ $(function(){
       $('.message-content__text').append(html)
       $('.form__form-area').val()
       scroll();
+    })
+    .fail(function(){
+      alert('メッセージを送信できませんでした');
     })
   });
 });

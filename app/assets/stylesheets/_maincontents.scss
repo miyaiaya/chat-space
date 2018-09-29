@@ -42,13 +42,15 @@ $side-width: 300px;
      }
    }
    .show-message{
-    height: calc( 100vh - 96px);
+    height: calc( 100vh - 96px -90px);
     width: 100%;
     padding: 0 40px;
     border: solid 1px #eeeeee;
     position: absolute;
     top: 96px;
+    bottom: 90px;
     box-sizing: border-box;
+    overflow: scroll;
      .message-content{
       padding-top: 46px;
        &__name{
