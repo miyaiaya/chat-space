@@ -7,12 +7,13 @@ $(document).on('turbolinks:load', function(){
                </h5>
                <span class= "message-content__date">
                  ${message.created_at}
+               </span>
                </div>
                <div class="lower-message">
-                 <p class="message-content__text">
-                   ${message.body}
-                 </p>
-                   ${image}
+               <p class="message-content__text">
+                 ${message.body}
+               </p>
+                ${image}
                </div>`;
     return html;
   }
@@ -43,6 +44,5 @@ $(document).on('turbolinks:load', function(){
     .fail(function(){
       alert('メッセージを送信できませんでした');
     });
-
   });
 });
