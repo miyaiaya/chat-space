@@ -35,7 +35,7 @@ $(document).on('turbolinks:load', function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.message-content__text').append(html)
+      $('.show-message').append(html)
       $('.form__form-area').val('')
       scroll();
       $('.send-button').prop('disabled', false);
