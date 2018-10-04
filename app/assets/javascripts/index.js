@@ -21,6 +21,7 @@ $(function(){
     dataType: 'json'
   })
   .done(function(users){
+    $(".chat-group-user").remove();
     if (users.length !== 0) {
       users.forEach(function(user){
         appendUser(user);
