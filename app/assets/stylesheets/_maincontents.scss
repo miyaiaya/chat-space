@@ -30,15 +30,18 @@ $side-width: 300px;
      }
      .infomation-edit{
       float: right;
-       a {
-        color: $blue;
-        border: solid 1px $blue;
-        line-height: 40px;
-        display: block;
-        padding: 0 20px;
-        margin-top: 28px;
-        text-decoration: none;
-       }
+      color: $blue;
+      border: solid 1px $blue;
+      line-height: 40px;
+      display: block;
+      padding: 0 20px;
+      margin-top: 28px;
+        a{
+          text-decoration: none;
+          color: $blue;
+          width:100vw;
+        }
+
      }
    }
    .show-message{
