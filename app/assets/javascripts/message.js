@@ -45,4 +45,24 @@ $(document).on('turbolinks:load', function(){
       alert('メッセージを送信できませんでした');
     });
   });
+
+  $(function(){
+    setInterval(funciton(){
+    var getUrl = location.href;
+    $.ajax({
+      url: getUrl,
+      type: 'GET',
+      data:
+      dataType: 'json',
+
+    })
+
+    },5000);
+  });
+
+
+
+
+
+
 });
