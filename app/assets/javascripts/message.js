@@ -54,7 +54,18 @@ $(document).on('turbolinks:load', function(){
       type: 'GET',
       data:
       dataType: 'json',
+    })
+    .done(function(data){
+      var insertHTML ="";
+      messages.forEach(function(message){
+        insertHTML += buildHTML(message);
+        $('.show-message').append(insertHTML);
+        scroll();
+      });
 
+    })
+    .fail(function(){
+      alert('自動更新に失敗しました');
     })
 
     },5000);
