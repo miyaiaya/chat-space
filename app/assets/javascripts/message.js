@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){
   function buildHTML(message){
     var image = message.image ? `<img src="${message.image}" class='lower-message__image'>` : "";
-    var html =`<div class="message-content">
+    var html =`<div class="message-content" data-message-id="${message.id}">
                <h5 class="message-content__name">
                  ${message.name}
                </h5>
@@ -46,30 +46,35 @@ $(document).on('turbolinks:load', function(){
     });
   });
 
-   var interval = setInterval(funciton(){
-    var last_message_id = $('.message-content').data('messageId');
+  $(function(){
+    var interval = setInterval(update, 5000);
+  });
 
-      if(window.location.href.match(/\/groups\/\d+\/messages/)){
-        $.ajax({
-          url: location.href;,
+  function update(){
+    if(window.location.href.match(/\/groups\/\d+\/messages/)){
+      var last_message_id = $('.message-content:last').data('messageId');
+       $.ajax({
+          url: location.href,
           type: 'GET',
           data: { id: last_message_id},
           dataType: 'json'
         })
         .done(function(messages){
-          var insertHTML ="";
-          messages.forEach(function(message){
-             insertHTML += buildHTML(message);
-            $('.show-message').append(insertHTML);
-            scroll();
-          });
+          if (messages.body != null && messages.image.url != null){
+            var insertHTML ="";
+            messages.forEach(function(message){
+               insertHTML += buildHTML(message);
+              $('.show-message').append(insertHTML);
+              scroll();
+            });
+          }
         })
-        .fail(function(messages){
+        .fail(function(){
           alert('自動更新に失敗しました');
-        })
+        });
       }else{
         clearInterval(interval);
       }
-      } , 5000 );
+  }
 
 });
