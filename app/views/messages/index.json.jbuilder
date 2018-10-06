@@ -4,5 +4,5 @@ json.array! @new_message do |message|
     json.body       message.body
     json.image      message.image.url
     json.name       message.user.name
-    json.datetime   message.created_at
+    json.created_at   message.created_at
 end
