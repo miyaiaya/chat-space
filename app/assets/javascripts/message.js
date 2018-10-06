@@ -46,34 +46,30 @@ $(document).on('turbolinks:load', function(){
     });
   });
 
-  $(function(){
-    setInterval(funciton(){
-    var getUrl = location.href;
-    $.ajax({
-      url: getUrl,
-      type: 'GET',
-      data:
-      dataType: 'json',
-    })
-    .done(function(data){
-      var insertHTML ="";
-      messages.forEach(function(message){
-        insertHTML += buildHTML(message);
-        $('.show-message').append(insertHTML);
-        scroll();
-      });
+   var interval = setInterval(funciton(){
+    var last_message_id = $('.message-content').data('messageId');
 
-    })
-    .fail(function(){
-      alert('自動更新に失敗しました');
-    })
-
-    },5000);
-  });
-
-
-
-
-
+      if(window.location.href.match(/\/groups\/\d+\/messages/)){
+        $.ajax({
+          url: location.href;,
+          type: 'GET',
+          data: { id: last_message_id},
+          dataType: 'json'
+        })
+        .done(function(messages){
+          var insertHTML ="";
+          messages.forEach(function(message){
+             insertHTML += buildHTML(message);
+            $('.show-message').append(insertHTML);
+            scroll();
+          });
+        })
+        .fail(function(messages){
+          alert('自動更新に失敗しました');
+        })
+      }else{
+        clearInterval(interval);
+      }
+      } , 5000 );
 
 });
