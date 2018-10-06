@@ -63,7 +63,7 @@ $(document).on('turbolinks:load', function(){
           if (messages.body != null && messages.image.url != null){
             var insertHTML ="";
             messages.forEach(function(message){
-               insertHTML += buildHTML(message);
+              insertHTML += buildHTML(message);
               $('.show-message').append(insertHTML);
               scroll();
             });
