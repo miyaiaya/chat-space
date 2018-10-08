@@ -49,14 +49,14 @@ group :development, :test do
   gem 'haml-rails'
   gem 'erb2haml'
   gem 'font-awesome-rails'
-  gem 'devise'
-  gem 'carrierwave'
-  gem 'mini_magick'
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'rails-controller-testing'
   gem 'faker'
 end
+ gem 'devise'
+ gem 'carrierwave'
+ gem 'mini_magick'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
